@@ -135,4 +135,6 @@ tree = TreeWrapper("B2JPsiKst_data_withBDT.root", "DecayTree")
 tree.Draw("B_M", "BDT > -1",  "") # no BDT cut
 tree.Draw("B_M", "BDT >  0",  "same") # A loose BDT cut
 tree.Draw("B_M", "BDT > 0.2", "same") # A tight BDT cut
-
+canvas.Modified()
+canvas.Update()
+raw_input("Press ENTER to exit")

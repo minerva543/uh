@@ -4,4 +4,4 @@ A tutorial for simple application of MVA, primarily through TMVA. The script tra
 
 ## Running
   * source setup.sh # This is if you are running on the imperial machines
-  * python -i python/runme.py
+  * python python/runme.py
