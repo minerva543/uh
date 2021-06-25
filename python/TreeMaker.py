@@ -58,10 +58,10 @@ class TreeMaker:
     try:
       branch = self._branch[branch]
     except KeyError:
-      print 'No branch named', branch, 'exists'
+      print('No branch named', branch, 'exists')
       return
     try:
-      for i in xrange(min(len(value), len(branch))):
+      for i in range(min(len(value), len(branch))):
         branch[i] = value[i]
     except TypeError:
       branch[0] = value

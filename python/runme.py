@@ -137,4 +137,4 @@ tree.Draw("B_M", "BDT >  0",  "same") # A loose BDT cut
 tree.Draw("B_M", "BDT > 0.2", "same") # A tight BDT cut
 canvas.Modified()
 canvas.Update()
-raw_input("Press ENTER to exit")
+input("Press ENTER to exit")

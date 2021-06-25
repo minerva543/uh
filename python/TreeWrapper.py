@@ -8,7 +8,7 @@ class TreeWrapper:
     self._branchOnAccess = False
     self._tree = TChain(name)
     self._functions = {}
-    if isinstance(file, basestring):
+    if isinstance(file, str):
       self.addFile(file)
     else:
       for f in file:
@@ -41,7 +41,7 @@ class TreeWrapper:
       Nentries = self._tree.GetEntries()
     if timeremaining:
       starttime = time()
-    for i in xrange(offset, Nentries):
+    for i in range(offset, Nentries):
 #      self._currentEntry = i
       if not self._branchOnAccess:
         self._tree.GetEntry(i)
@@ -70,15 +70,15 @@ class TreeWrapper:
           timestr += ' ' + str(int(tr)) + ' s'
             
           displaystr += ' Remaining: ' + timestr
-        print displaystr
+        print(displaystr)
       else:
         self.shouldPrint = False
       yield i
     if not quiet:
       try:
-        print 'Processed ', i+1, 'entries'
+        print('Processed ', i+1, 'entries')
       except:
-        print 'No entries processed'
+        print('No entries processed')
 
   def getFileStartLength(self, filename):
     for whichtree, chainfile in enumerate(self._tree.GetListOfFiles()):
@@ -137,7 +137,7 @@ class TreeWrapper:
           lengthvar = title[0].split('[')[1][:-1]
         except:
           lengthvar = None
-#        print 'Adding ', name, type, length
+#        print('Adding ', name, type, length)
         self._cache[name] = [None, -1, lengthvar, type]
 
       cache = self._cache[name]
